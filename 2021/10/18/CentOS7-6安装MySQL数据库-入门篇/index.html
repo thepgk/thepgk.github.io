@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="CentOS7.6安装MySQL数据库（入门篇）CentOS中有默认安装的MariaDB，它是MySQL的分支，如果要在系统中安装MySQL，当安装完成之后可以直接覆盖掉MariaDB。 一、 MyAQL安装前的准备查看MariaDB数据库 # rpm -qa|grep mariadb 或 # yum list installed | grep mariadb  查看系统原先是否有MySQL  #">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/10/18/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/2021/10/18/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/c7ef3af88a5a4611967629926d9b06b9.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/09baac6ec263408ba7fd07adf69e459c.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/d9c6193e88c64db8bc7ac5583d9ca3f3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54Gr54On5LqRX28=,size_20,color_FFFFFF,t_70,g_se,x_16">
@@ -43,10 +43,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ad5f742ee672418aa34bc68f91b04274.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/c21f257ddd9342b686a750f85b2b43ec.png">
 <meta property="article:published_time" content="2021-10-18T12:01:49.000Z">
-<meta property="article:modified_time" content="2021-10-18T12:53:36.242Z">
+<meta property="article:modified_time" content="2021-10-18T14:37:46.507Z">
 <meta property="article:author" content="ThePGK">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/18/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png">
+<meta name="twitter:image" content="http://example.com/2021/10/18/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png">
 
 
 <link rel="canonical" href="http://example.com/2021/10/18/CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/">
@@ -201,7 +201,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-10-18 20:01:49 / Modified: 20:53:36" itemprop="dateCreated datePublished" datetime="2021-10-18T20:01:49+08:00">2021-10-18</time>
+      <time title="Created: 2021-10-18 20:01:49 / Modified: 22:37:46" itemprop="dateCreated datePublished" datetime="2021-10-18T20:01:49+08:00">2021-10-18</time>
     </span>
 
   
@@ -236,7 +236,7 @@
 <pre><code># yum -y install mysql57-community-release-el7-10.noarch.rpm
 </code></pre>
 <p><strong>注意：</strong> 此时需要保证有mysql组和mysql账户，否则安装服务器时，可能会有报错（此报错影响数据库的启动），如下：</p>
-<p><img src="CentOS7-6%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%85%A5%E9%97%A8%E7%AF%87/%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png"></p>
+<p><img src="%E6%97%A0mysql%E7%BB%84%E5%92%8Cmysql%E8%B4%A6%E6%88%B7%E6%97%B6%E7%9A%84%E6%8A%A5%E9%94%99%E5%9B%BE.png"></p>
 <p>添加mysql组和mysql组中用户解决：</p>
 <pre><code># groupadd mysql
 </code></pre>
